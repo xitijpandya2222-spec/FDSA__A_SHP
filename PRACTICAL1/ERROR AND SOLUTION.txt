@@ -1,0 +1,6 @@
+1.1 --> No Errors . Learn new methode of rotation of Array
+
+1.2 --> No errors . Find array element which was repeated .
+
+1.3 --> How to take n strings like array using vector .
+	vector<string>arr(n)
