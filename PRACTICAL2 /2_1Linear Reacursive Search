@@ -1,0 +1,50 @@
+#include<iostream>
+#include<string>
+#include<vector>
+using namespace std;
+
+int recursivesearch(vector<string> &arr, string targetplate, int i)
+{
+    if(i == arr.size())
+    {
+        return -1;
+    }
+    if(arr[i] == targetplate)
+    {
+        return i;
+    }
+    return recursivesearch(arr, targetplate, i + 1);
+}
+
+int main()
+{
+    int n;
+    cout << "Number of Vehicles : ";
+    cin >> n;
+
+    vector<string> arr(n);
+
+    cout << "Enter all car plate numbers : " << endl;
+    for(int i = 0; i < n; i++)
+    {
+        cout << "Enter " << i + 1 << " Car Plate Number : ";
+        cin >> arr[i];
+    }
+
+    string targetplate;
+    cout << "Enter target plate number : ";
+    cin >> targetplate;
+
+    int position = recursivesearch(arr, targetplate, 0);
+
+    if(position != -1)
+    {
+        cout << "Car found at position : " << position + 1 << endl;
+    }
+    else
+    {
+        cout << "No car found !!" << endl;
+    }
+
+    return 0;
+}
