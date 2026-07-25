@@ -1,0 +1,70 @@
+2.1 ---> Linear Search using loop and using Recursive Function . Function call it self .
+	 I got error in Recrsive Linear Search .
+int rs(vector<string> &arr, string targetplate, int i)
+{
+    if(i == arr.size())
+    {
+        return -1;
+    }
+    if(arr[i] == targetplate)
+    {
+        return i;
+    }
+    return rs(arr, targetplate, i + 1);
+}
+string targetplate;
+    cout << "Enter target plate number : ";
+    cin >> targetplate;
+
+    int position = rs(arr, targetplate, 0);
+
+    if(position != -1)
+    {
+        cout << "Car found at position : " << position + 1 << endl;
+    }
+    else
+    {
+        cout << "No car found !!" << endl;
+    }
+
+
+2.2 ---> Binary Search for sorted array .
+	
+ ***	 in this I learnt Sorting of array using 2 for loops .
+	for(int i=0; i<n-1; i++)
+    {
+        for(int j=0; j<n-i-1; j++)
+        {
+            if(arr[j] > arr[j+1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+
+	---> Samr here also I got error for recursive binary search . 
+
+int rs(int arr[], int start, int end, int search)
+{
+    if(start > end)
+    {
+        return -1;
+    }
+
+    int mid = start + (end - start) / 2;
+
+    if(arr[mid] == search)
+    {
+        return mid;
+    }
+    else if(search > arr[mid])
+    {
+        return rs(arr, mid + 1, end, search);
+    }
+    else
+    {
+        return rs(arr, start, mid - 1, search);
+    }
+}
