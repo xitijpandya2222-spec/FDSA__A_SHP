@@ -1,0 +1,11 @@
+8_1
+
+Error: The code uses NULL, which works here, but may cause pointer-related issues in modern C++.
+
+Correction: Use nullptr instead of NULL for safer and clearer pointer handling.
+
+8_2
+
+Error: Duplicate values are ignored because the insert() function only handles values smaller or greater than the root.
+
+Correction: Add an else condition if duplicate values also need to be inserted into the BST.
