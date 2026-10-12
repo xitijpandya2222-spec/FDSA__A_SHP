@@ -1,0 +1,5 @@
+9_1
+
+Error: vector<int> adj[n] may cause a compilation error in some C++ compilers because the array size is variable.
+
+Correction: Use vector<vector<int>> adj(n); and update the function parameters accordingly.
