@@ -1,0 +1,17 @@
+6_1
+
+Error: If the user enters an invalid menu choice, the program does not display any error message.
+
+Correction: Add an else condition to display "Invalid choice!" when the choice is not between 1 and 4.
+
+6_2
+
+Error: The code uses string but does not include the required header file. 
+
+Correction: Add #include <string> after #include <iostream> to avoid compilation errors.
+
+6_3
+
+Error: In the ')' condition, st.top() may cause an error if the stack is empty or no matching '(' is found.
+
+Correction: Check !st.empty() in the loop condition and handle unmatched parentheses before accessing st.top().
