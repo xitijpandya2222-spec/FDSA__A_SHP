@@ -1,1 +1,11 @@
+7_1
 
+Error: If the user enters n = 0, the modulo operation causes an error. Also, n should not exceed the array size of 100.
+
+Correction: Check that n is between 1 and 100 before using the circular queue.
+
+7_2
+
+Error: The code does not display which patient has been attended after q.pop().
+
+Correction: Store q.front() in a variable and print the patient number before calling q.pop().
