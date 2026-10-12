@@ -1,0 +1,11 @@
+4_1
+
+Error: In addPriority(), negative positions are not checked, which may insert the patient at an incorrect position.
+
+Correction: Add if (position < 0) before inserting and display "Invalid position!"
+
+4_2
+
+Error: In insertPos(), negative or zero positions are not handled properly.
+
+Correction: Check if (pos < 1) and display "Invalid position" before inserting the node.
