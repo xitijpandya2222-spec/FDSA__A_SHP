@@ -1,0 +1,11 @@
+5_1
+
+Error: The code uses string but does not include the required header file.
+
+Correction: Add #include <string> at the beginning of the program to avoid compilation errors.
+
+5_2
+
+Error: The code uses string but does not include the required header file. Also, deleting the only student can leave the circular doubly linked list pointing to invalid nodes.
+
+Correction: Add #include <string> and handle the single-node deletion case by setting dh = NULL when q->next == q.
