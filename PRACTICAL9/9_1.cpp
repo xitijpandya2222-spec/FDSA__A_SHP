@@ -1,64 +1,87 @@
+
 #include <iostream>
 #include <vector>
 #include <queue>
 using namespace std;
 
-void DFS(int node, vector<int> adj[], vector<int>& vis) {
-    vis[node] = 1;
-    cout << node << " ";
+// Depth First Search (DFS)
+void DFS(int building, vector<int> graph[], bool visited[])
+{
+    visited[building] = true;
+    cout << building << " ";
 
-    for (int x : adj[node]) {
-        if (!vis[x])
-            DFS(x, adj, vis);
+    for (int next : graph[building])
+    {
+        if (!visited[next])
+        {
+            DFS(next, graph, visited);
+        }
     }
 }
 
-void BFS(int start, vector<int> adj[], int n) {
-    vector<int> vis(n, 0);
+// Breadth First Search (BFS)
+void BFS(int start, vector<int> graph[], int n)
+{
+    bool visited[100] = {false};
     queue<int> q;
 
-    vis[start] = 1;
+    visited[start] = true;
     q.push(start);
 
-    while (!q.empty()) {
-        int node = q.front();
+    while (!q.empty())
+    {
+        int building = q.front();
         q.pop();
 
-        cout << node << " ";
+        cout << building << " ";
 
-        for (int x : adj[node]) {
-            if (!vis[x]) {
-                vis[x] = 1;
-                q.push(x);
+        for (int next : graph[building])
+        {
+            if (!visited[next])
+            {
+                visited[next] = true;
+                q.push(next);
             }
         }
     }
 }
 
-int main() {
-    int n, m;
-    cin >> n >> m;
+int main()
+{
+    int n, edges;
 
-    vector<int> adj[n];
+    cout << "Enter number of buildings: ";
+    cin >> n;
 
-    for (int i = 0; i < m; i++) {
+    vector<int> graph[100];
+
+    cout << "Enter number of roads: ";
+    cin >> edges;
+
+    cout << "Enter roads (building1 building2):\n";
+
+    for (int i = 0; i < edges; i++)
+    {
         int u, v;
         cin >> u >> v;
 
-        adj[u].push_back(v);
-        adj[v].push_back(u);
+        graph[u].push_back(v);
+        graph[v].push_back(u);
     }
 
     int start;
+    cout << "Enter starting building (0 to " << n - 1 << "): ";
     cin >> start;
 
-    vector<int> vis(n, 0);
+    bool visited[100] = {false};
 
-    cout << "DFS: ";
-    DFS(start, adj, vis);
+    cout << "\nDFS Traversal: ";
+    DFS(start, graph, visited);
 
-    cout << "\nBFS: ";
-    BFS(start, adj, n);
+    cout << "\nBFS Traversal: ";
+    BFS(start, graph, n);
+
+    cout << endl;
 
     return 0;
 }
