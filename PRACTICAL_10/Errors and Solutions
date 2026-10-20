@@ -1,0 +1,19 @@
+Error 1: I faced an issue when all parking slots were occupied, which caused the program to keep searching for an empty slot.
+
+Solution: I checked whether all slots were full and displayed a message when no slot was available.
+
+Error 2: I faced a problem when the slot index exceeded 9 and did not return to slot 0.
+
+Solution: I used the modulo operator (% 10) to keep the slot index within the range of 0 to 9.
+
+Error 3: I faced difficulty storing multiple books on the same shelf.
+
+Solution: I used a list for each shelf to store and display multiple books correctly.
+
+Error 4: I faced a problem when quadratic probing did not find an empty slot.
+
+Solution: I checked the probing sequence and stopped searching after the allowed number of attempts.
+
+Error 5: I faced difficulty calculating the next slot using double hashing.
+
+Solution: I ensured that the second hash function returned a non-zero step size so that the program could probe other slots correctly.
